@@ -20,6 +20,7 @@ builder.Services.AddIdentity<IdentityUser<Guid>, IdentityRole<Guid>>()
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<ICadastraUsuarioService, CadastraUsuarioService>();
 builder.Services.AddScoped<ILoginUsuarioService, LoginUsuarioService>();
+builder.Services.AddScoped<TokenService, TokenService>();
 
 var app = builder.Build();
 
