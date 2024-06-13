@@ -12,5 +12,5 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
 1. **Clone o repositório**
 
    ```bash
-   git clone https://github.com/seu-usuario/sua-api.git
-   cd sua-api
+   git clone [https://github.com/joanesgonzaga-dev/UserControlApi.git]
+   cd https://github.com/joanesgonzaga-dev/UserControlApi.git
