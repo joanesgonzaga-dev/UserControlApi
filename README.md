@@ -19,6 +19,6 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
    ````
    ## Endpoints
    1. **Ver documentação (Swagger)**
-   [Link para documentação Swagger](https://www.adefinir.com)
+   [Link](https://www.google.com)
    
       
