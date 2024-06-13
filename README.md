@@ -13,7 +13,8 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
 
    ```bash
    git clone https://github.com/joanesgonzaga-dev/UserControlApi.git
-   ```bash
+   ```
+   ````bash
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
 
    
