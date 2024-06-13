@@ -18,4 +18,8 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
    ````
    ## Endpoints
-   1. **Registro de Usuário**
+   1. **Ver documentação (Swagger)**
+   ```link
+   http://adefinir
+   
+      
