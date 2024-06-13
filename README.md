@@ -17,9 +17,12 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
    ````bash
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
    ````
-   ## Endpoints
+## Endpoints
    **Ver documentação (Swagger)**
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
 Esta API foi desenvolvida para fornecer um serviço robusto de autenticação e autorização utilizando as melhores práticas do ASP.NET Core Identity e JWT. Certifique-se de proteger adequadamente suas chaves e tokens e de seguir boas práticas de segurança para evitar vulnerabilidades.  
+
+### Api Desenvolvida por:
+Joanes Gonzaga
