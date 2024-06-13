@@ -7,7 +7,7 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
 - MySQL Server
 - Ferramenta para testes de API (Postman, Curl, etc.)
 
-  ## Instalação
+## Instalação
 
 1. **Clone o repositório**
 
@@ -16,5 +16,6 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
    ```
    ````bash
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
-
-   
+   ````
+   ## Endpoints
+   1. **Registro de Usuário**
