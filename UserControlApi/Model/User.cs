@@ -1,8 +1,8 @@
 ﻿namespace UserControlApi.Model
 {
-    public class Usuario
+    public class User
     {
-        public Usuario()
+        public User()
         {
                 Id = Guid.NewGuid();
         }

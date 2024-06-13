@@ -3,8 +3,8 @@ using UserControlApi.Model.DTO;
 
 namespace UserControlApi.Service
 {
-    public interface ILoginUsuarioService
+    public interface ILoginService
     {
-        public Result Login(UsuarioLoginDTO usuarioLogin);
+        public Result ToLogin(UsuarioLoginDTO usuarioLogin);
     }
 }

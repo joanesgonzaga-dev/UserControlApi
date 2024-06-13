@@ -8,18 +8,18 @@ using UserControlApi.Model.DTO;
 
 namespace UserControlApi.Service
 {
-    public class CadastraUsuarioService : ICadastraUsuarioService
+    public class SignupService : ISignupService
     {
         private IMapper _mapper;
         private UserManager<IdentityUser<Guid>> _userManager;
-        public CadastraUsuarioService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager)
+        public SignupService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager)
         {
             _mapper = mapper;
             _userManager = userManager;
         }
-        public Result CadastraUsuario(UsuarioCadastroDTO cadastroDTO)
+        public Result ToRegister(UsuarioCadastroDTO cadastroDTO)
         {
-            Usuario usuario = _mapper.Map<Usuario>(cadastroDTO);
+            User usuario = _mapper.Map<User>(cadastroDTO);
             IdentityUser<Guid> identityUser = _mapper.Map<IdentityUser<Guid>>(usuario);
             Task<IdentityResult> result = _userManager.CreateAsync(identityUser, cadastroDTO.Password);
 

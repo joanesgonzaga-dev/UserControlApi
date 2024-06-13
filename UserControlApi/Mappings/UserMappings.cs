@@ -5,12 +5,12 @@ using UserControlApi.Model.DTO;
 
 namespace UserControlApi.Mappings
 {
-    public class UsuarioMappings : Profile
+    public class UserMappings : Profile
     {
-        public UsuarioMappings()
+        public UserMappings()
         {
-            CreateMap<UsuarioCadastroDTO, Usuario>();
-            CreateMap<Usuario, IdentityUser<Guid>>();
+            CreateMap<UsuarioCadastroDTO, User>();
+            CreateMap<User, IdentityUser<Guid>>();
         }
     }
 }

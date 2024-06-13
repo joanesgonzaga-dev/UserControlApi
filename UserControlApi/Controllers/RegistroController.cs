@@ -9,8 +9,8 @@ namespace UserControlApi.Controllers
     [ApiController]
     public class RegistroController : ControllerBase
     {
-        private ICadastraUsuarioService _usuarioService;
-        public RegistroController(ICadastraUsuarioService usuarioService)
+        private ISignupService _usuarioService;
+        public RegistroController(ISignupService usuarioService)
         {
                 _usuarioService = usuarioService;
         }

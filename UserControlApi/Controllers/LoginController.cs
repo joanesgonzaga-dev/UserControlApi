@@ -9,8 +9,8 @@ namespace UserControlApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        ILoginUsuarioService _loginUsuarioService;
-        public LoginController(ILoginUsuarioService loginUsuarioService)
+        ILoginService _loginUsuarioService;
+        public LoginController(ILoginService loginUsuarioService)
         {
             _loginUsuarioService = loginUsuarioService;
         }

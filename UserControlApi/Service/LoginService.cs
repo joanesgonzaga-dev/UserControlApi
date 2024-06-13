@@ -5,16 +5,16 @@ using UserControlApi.Model.DTO;
 
 namespace UserControlApi.Service
 {
-    public class LoginUsuarioService : ILoginUsuarioService
+    public class LoginService : ILoginService
     {
         private SignInManager<IdentityUser<Guid>> _signInManager;
         private TokenService _tokenService;
-        public LoginUsuarioService(SignInManager<IdentityUser<Guid>> signInManager, TokenService tokenService)
+        public LoginService(SignInManager<IdentityUser<Guid>> signInManager, TokenService tokenService)
         {
             _signInManager = signInManager;
             _tokenService = tokenService;
         }
-        public Result Login(UsuarioLoginDTO usuarioLogin)
+        public Result ToLogin(UsuarioLoginDTO usuarioLogin)
         {
             var resultadoIdentity = _signInManager.PasswordSignInAsync(
                 usuarioLogin.UserName, usuarioLogin.Password, false, false);
