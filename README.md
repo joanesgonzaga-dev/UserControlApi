@@ -3,8 +3,8 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
 
 ## Requisitos
 
-- .NET 6 SDK
-- MySQL Server
+- [.NET 6 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
+- [MySQL Server](https://dev.mysql.com/downloads/mysql/)
 - Ferramenta para testes de API (Postman, Curl, etc.)
 
 ## Instalação
@@ -18,7 +18,8 @@ Esta API é um serviço de backend desenvolvido em .NET 6, utilizando o ASP.NET 
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
    ````
    ## Endpoints
-   1. **Ver documentação (Swagger)**
-   [Link](https://www.google.com)
+   **Ver documentação (Swagger)**
+   [Link para documentação](https://adefinir.com)
    
-      
+##Considerações Finais
+Esta API foi desenvolvida para fornecer um serviço robusto de autenticação e autorização utilizando as melhores práticas do ASP.NET Core Identity e JWT. Certifique-se de proteger adequadamente suas chaves e tokens e de seguir boas práticas de segurança para evitar vulnerabilidades.  
