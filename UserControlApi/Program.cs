@@ -14,8 +14,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<UserControlDbContext>(options =>
                     options.UseMySQL(builder.Configuration["ConnectionStrings:UserControlDbContextConnection"]));
 
-builder.Services.AddIdentity<IdentityUser<Guid>, IdentityRole<Guid>>()
-                    .AddEntityFrameworkStores<UserControlDbContext>();
+builder.Services.AddIdentity<IdentityUser<Guid>, IdentityRole<Guid>>(
+                     option => option.SignIn.RequireConfirmedEmail = true)
+                    .AddEntityFrameworkStores<UserControlDbContext>()
+                    .AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<ISignupService, SignupService>();

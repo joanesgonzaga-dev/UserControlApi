@@ -5,7 +5,7 @@ using UserControlApi.Service;
 
 namespace UserControlApi.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/account/[controller]")]
     [ApiController]
     public class RegisterController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace UserControlApi.Controllers
         {
             Result resultado = _signupService.ToRegister(cadastroDTO);
             if (resultado.IsFailed) return StatusCode(500);
-            return Ok();
+            return Ok(resultado.Successes);
         }
     }
 }

@@ -5,7 +5,7 @@ using UserControlApi.Service;
 
 namespace UserControlApi.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/account/[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
