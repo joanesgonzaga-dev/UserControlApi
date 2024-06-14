@@ -9,16 +9,16 @@ namespace UserControlApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        ILoginService _loginUsuarioService;
-        public LoginController(ILoginService loginUsuarioService)
+        ILoginService _loginService;
+        public LoginController(ILoginService loginService)
         {
-            _loginUsuarioService = loginUsuarioService;
+            _loginService = loginService;
         }
 
         [HttpPost]
-        public IActionResult LogaUsuario([FromBody] UsuarioLoginDTO loginRequest)
+        public IActionResult UserLogin([FromBody] UsuarioLoginDTO loginRequest)
         {
-            Result resultado = _loginUsuarioService.Login(loginRequest);
+            Result resultado = _loginService.ToLogin(loginRequest);
             if (resultado.IsFailed) return Unauthorized(resultado.Errors);
             
             return Ok(resultado.Successes);
