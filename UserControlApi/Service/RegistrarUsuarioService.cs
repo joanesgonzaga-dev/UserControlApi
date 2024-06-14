@@ -8,27 +8,42 @@ using UserControlApi.Model.DTO;
 
 namespace UserControlApi.Service
 {
-    public class SignupService : ISignupService
+    public class RegistrarUsuarioService : IRegistrarUsuarioService
     {
         private IMapper _mapper;
         private UserManager<IdentityUser<Guid>> _userManager;
-        public SignupService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager)
+        public RegistrarUsuarioService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager)
         {
             _mapper = mapper;
             _userManager = userManager;
         }
-        public Result ToRegister(UsuarioCadastroDTO cadastroDTO)
+        public Result Registrar(UsuarioCadastroDTO cadastroDTO)
         {
-            User usuario = _mapper.Map<User>(cadastroDTO);
+            Usuario usuario = _mapper.Map<Usuario>(cadastroDTO);
             IdentityUser<Guid> identityUser = _mapper.Map<IdentityUser<Guid>>(usuario);
             Task<IdentityResult> result = _userManager.CreateAsync(identityUser, cadastroDTO.Password);
 
             if (result.Result.Succeeded) {
 
                 var code = _userManager.GenerateEmailConfirmationTokenAsync(identityUser).Result;
-                return Result.Ok().WithSuccess(code).WithSuccess(code);
+                return Result.Ok().WithSuccess(code);
             }
             return Result.Fail("Falha ao cadastrar usuário");
+        }
+
+        public Result Ativar(UsuarioAtivacaoDTO usuarioDTO)
+        {
+            IdentityUser<Guid>? identityUser = _userManager.Users.FirstOrDefault(
+                u => u.Id == usuarioDTO.UsuarioId);
+
+            var identityResult = _userManager.ConfirmEmailAsync(identityUser, usuarioDTO.CodigoDeAtivacao).Result;
+
+            if (identityResult.Succeeded)
+            {
+                return Result.Ok();
+            }
+
+            return Result.Fail("Ocorreu um erro ao ativar a conta");
         }
     }
 }

@@ -16,9 +16,9 @@ namespace UserControlApi.Controllers
         }
 
         [HttpPost]
-        public IActionResult UserLogin([FromBody] UsuarioLoginDTO loginRequest)
+        public IActionResult Logar([FromBody] UsuarioLoginDTO loginRequest)
         {
-            Result resultado = _loginService.ToLogin(loginRequest);
+            Result resultado = _loginService.Logar(loginRequest);
             if (resultado.IsFailed) return Unauthorized(resultado.Errors);
             
             return Ok(resultado.Successes);

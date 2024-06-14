@@ -9,8 +9,8 @@ namespace UserControlApi.Mappings
     {
         public UserMappings()
         {
-            CreateMap<UsuarioCadastroDTO, User>();
-            CreateMap<User, IdentityUser<Guid>>();
+            CreateMap<UsuarioCadastroDTO, Usuario>();
+            CreateMap<Usuario, IdentityUser<Guid>>();
         }
     }
 }

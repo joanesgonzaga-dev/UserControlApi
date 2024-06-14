@@ -20,7 +20,7 @@ builder.Services.AddIdentity<IdentityUser<Guid>, IdentityRole<Guid>>(
                     .AddDefaultTokenProviders();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddScoped<ISignupService, SignupService>();
+builder.Services.AddScoped<IRegistrarUsuarioService, RegistrarUsuarioService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<TokenService, TokenService>();
 builder.Services.AddScoped<LogoutService, LogoutService>();

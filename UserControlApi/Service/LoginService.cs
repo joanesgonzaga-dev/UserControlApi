@@ -14,7 +14,7 @@ namespace UserControlApi.Service
             _signInManager = signInManager;
             _tokenService = tokenService;
         }
-        public Result ToLogin(UsuarioLoginDTO usuarioLogin)
+        public Result Logar(UsuarioLoginDTO? usuarioLogin)
         {
             var resultadoIdentity = _signInManager.PasswordSignInAsync(
                 usuarioLogin.UserName, usuarioLogin.Password, false, false);

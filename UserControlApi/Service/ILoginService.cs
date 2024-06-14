@@ -5,6 +5,6 @@ namespace UserControlApi.Service
 {
     public interface ILoginService
     {
-        public Result ToLogin(UsuarioLoginDTO usuarioLogin);
+        public Result Logar(UsuarioLoginDTO usuarioLogin);
     }
 }

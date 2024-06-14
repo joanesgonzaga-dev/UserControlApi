@@ -2,12 +2,12 @@
 
 namespace UserControlApi.Model.DTO
 {
-    public class UsuarioLoginDTO
+    public class UsuarioAtivacaoDTO
     {
         [Required]
-        public string? UserName { get; set; }
+        public Guid UsuarioId { get; set; }
 
         [Required]
-        public string? Password { get; set; }
+        public string? CodigoDeAtivacao { get; set; }
     }
 }
