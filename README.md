@@ -36,6 +36,8 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 2. **Login de Usuário**
    * Método HTTP: POST
    * URL: `api/account/login`
+   * Parâmetros:
+        continua...
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
