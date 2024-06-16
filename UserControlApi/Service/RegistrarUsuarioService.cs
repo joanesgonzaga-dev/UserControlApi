@@ -3,8 +3,10 @@ using FluentResults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Mysqlx;
+using System.Web;
 using UserControlApi.Model;
 using UserControlApi.Model.DTO;
+using UserControlApi.Model.Enums;
 
 namespace UserControlApi.Service
 {
@@ -12,23 +14,32 @@ namespace UserControlApi.Service
     {
         private IMapper _mapper;
         private UserManager<IdentityUser<Guid>> _userManager;
-        public RegistrarUsuarioService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager)
+        private EnviarEmailService _enviarEmailService;
+        public RegistrarUsuarioService(IMapper mapper, UserManager<IdentityUser<Guid>> userManager, EnviarEmailService enviarEmailService)
         {
             _mapper = mapper;
             _userManager = userManager;
+            _enviarEmailService = enviarEmailService;
         }
         public Result Registrar(UsuarioCadastroDTO cadastroDTO)
         {
-            Usuario usuario = _mapper.Map<Usuario>(cadastroDTO);
-            IdentityUser<Guid> identityUser = _mapper.Map<IdentityUser<Guid>>(usuario);
-            Task<IdentityResult> result = _userManager.CreateAsync(identityUser, cadastroDTO.Password);
+                Usuario usuario = _mapper.Map<Usuario>(cadastroDTO);
+                IdentityUser<Guid> identityUser = _mapper.Map<IdentityUser<Guid>>(usuario);
+                Task<IdentityResult> result = _userManager.CreateAsync(identityUser, cadastroDTO.Password);
 
-            if (result.Result.Succeeded) {
+                //Gera Token de Confirmação
+                if (result.Result.Succeeded)
+                {
+                    var codigoAtivacao = _userManager.GenerateEmailConfirmationTokenAsync(identityUser).Result;
+                    //Encoded para email
+                    var encodedToken = HttpUtility.UrlEncode(codigoAtivacao);
 
-                var code = _userManager.GenerateEmailConfirmationTokenAsync(identityUser).Result;
-                return Result.Ok().WithSuccess(code);
-            }
-            return Result.Fail("Falha ao cadastrar usuário");
+                    //Envia email de confirmação
+                    _enviarEmailService.EnviarEmail(new[] { identityUser.Email }, EnumAssuntoEmail.AtivacaoCadastro, identityUser.Id, encodedToken);
+
+                    return Result.Ok().WithSuccess(codigoAtivacao);
+                }
+                return Result.Fail("Falha ao cadastrar usuário");
         }
 
         public Result Ativar(UsuarioAtivacaoDTO usuarioDTO)

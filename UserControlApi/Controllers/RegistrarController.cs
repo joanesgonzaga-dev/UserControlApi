@@ -10,9 +10,10 @@ namespace UserControlApi.Controllers
     public class RegistrarController : ControllerBase
     {
         private IRegistrarUsuarioService _registrarUsuarioService;
+        
         public RegistrarController(IRegistrarUsuarioService registrarUsuarioService)
         {
-                _registrarUsuarioService = registrarUsuarioService;
+            _registrarUsuarioService = registrarUsuarioService;
         }
 
         [HttpPost]

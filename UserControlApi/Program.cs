@@ -24,6 +24,7 @@ builder.Services.AddScoped<IRegistrarUsuarioService, RegistrarUsuarioService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
 builder.Services.AddScoped<TokenService, TokenService>();
 builder.Services.AddScoped<LogoutService, LogoutService>();
+builder.Services.AddScoped<EnviarEmailService, EnviarEmailService>();
 
 var app = builder.Build();
 
