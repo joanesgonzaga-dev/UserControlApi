@@ -33,7 +33,16 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
         * 200 OK: Usuário registrado com sucesso
         * 400 Bad Request: Erro de validação
           
-2. **Login de Usuário**
+2. **Ativação de Conta de Usuário**
+   * Método HTTP: GET
+   * URL: `api/account/ativar`
+   * Parâmetros:
+        continua...
+   * Resposta:
+     * 200 OK: Usuário logado com sucesso
+     * 400 Bad Request: Erro de credenciais
+
+3. **Login de Usuário**
    * Método HTTP: POST
    * URL: `api/account/login`
    * Parâmetros:
@@ -41,7 +50,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * Resposta:
      * 200 OK: Usuário logado com sucesso
      * 400 Bad Request: Erro de credenciais
-       
+
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
