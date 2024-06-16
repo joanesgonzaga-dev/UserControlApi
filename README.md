@@ -38,6 +38,10 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * URL: `api/account/login`
    * Parâmetros:
         continua...
+   * Resposta:
+     * 200 OK: Usuário logado com sucesso
+     * 400 Bad Request: Erro de credenciais
+       
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
