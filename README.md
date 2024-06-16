@@ -21,7 +21,11 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    cd https://github.com/joanesgonzaga-dev/UserControlApi.git
    ````
 ## Endpoints
-   **Ver documentação (Swagger)**
+1. **Registro de Usuário**
+   * Método HTTP: POST
+   * URL: `api/account/registro
+   * Parâmetros:
+        * Param1
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
