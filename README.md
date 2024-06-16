@@ -23,7 +23,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 ## Endpoints
 1. **Registro de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/registrar
+   * URL: `api/account/registrar`
    * Parâmetros:
         * userName (string): Nome de usuário
         * email (string): Email de Usuário
@@ -32,6 +32,10 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * Resposta:
         * 200 OK: Usuário registrado com sucesso
         * 400 Bad Request: Erro de validação
+          
+2. **Login de Usuário**
+   * Método HTTP: POST
+   * URL: `api/account/login`
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
