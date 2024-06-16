@@ -24,7 +24,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 1. **Registro de Usuário**
    * Método HTTP: POST
    * URL: `api/account/registrar`
-   * Parâmetros:
+   * Parâmetros (Body):
         * userName (string): Nome de usuário
         * email (string): Email de Usuário
         * password (string): Senha de Usuário
@@ -35,12 +35,13 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
           
 2. **Ativação de Conta de Usuário**
    * Método HTTP: GET
-   * URL: `api/account/ativar`
-   * Parâmetros:
-        continua...
+   * URL: `api/account/ativar?usuarioId={usuarioId}&codigoDeAtivacao={codigoDeAtivacao}`
+   * Parâmetros (QueryParams):
+        * usuarioId (string): Código (Guid) de identificação de usuário no sistema
+        * codigoDeAtivacao (string): Tooken recebido pela aplicação para validar ativação de conta de usuário
    * Resposta:
      * 200 OK: Usuário logado com sucesso
-     * 400 Bad Request: Erro de credenciais
+     * 500 Bad Request: Erro interno
 
 3. **Login de Usuário**
    * Método HTTP: POST
