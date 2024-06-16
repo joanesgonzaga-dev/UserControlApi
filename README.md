@@ -31,7 +31,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
         * passwordConfirmed (string): Confirmação de Senha de Usuário
    * Resposta:
         * 200 OK: Usuário registrado com sucesso
-        * 400 Bad Request: Erro de validação
+        * 400 Bad Request: Falha ao cadastrar usuário
           
 2. **Ativação de Conta de Usuário**
    * Método HTTP: GET
@@ -41,7 +41,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
         * codigoDeAtivacao (string): Tooken recebido pela aplicação para validar ativação de conta de usuário
    * Resposta:
      * 200 OK: Usuário logado com sucesso
-     * 500 Bad Request: Erro interno
+     * 500 Internal Server Error: Ocorreu um erro ao ativar a conta
 
 3. **Login de Usuário**
    * Método HTTP: POST
