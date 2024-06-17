@@ -47,6 +47,16 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * Método HTTP: POST
    * URL: `api/account/login`
    * Parâmetros:
+       * userName (string): Código (Guid) de identificação de usuário no sistema
+       * Password (string): Senha de usuário
+   * Resposta:
+     * 200 OK: Usuário logado com sucesso
+     * 401 Unauthorized: Falha ao executar o login
+
+4. **Logout de Usuário**
+   * Método HTTP: POST
+   * URL: `api/account/logout`
+   * Parâmetros:
         continua...
    * Resposta:
      * 200 OK: Usuário logado com sucesso
