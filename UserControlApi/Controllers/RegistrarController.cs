@@ -24,8 +24,8 @@ namespace UserControlApi.Controllers
             return Ok(resultado.Successes);
         }
 
-        [HttpPost("ativar")]
-        public IActionResult AtivarConta(UsuarioAtivacaoDTO usuario)
+        [HttpGet("ativar")]
+        public IActionResult AtivarConta([FromQuery] UsuarioAtivacaoDTO usuario)
         {
             Result result = _registrarUsuarioService.Ativar(usuario);
             if (result.IsFailed) return StatusCode(500);

@@ -15,20 +15,21 @@ namespace UserControlApi.Service
         }
         public void EnviarEmail(string[] destinatario, EnumAssuntoEmail ativacaoCadastro, Guid identityUserId, string codigoAtivacao)
         {
-            string textoBodyEmail = string.Empty;
+            string assuntoEmail = string.Empty;
+            string corpoEmail = string.Empty;
             if (ativacaoCadastro == EnumAssuntoEmail.AtivacaoCadastro)
             {
-                textoBodyEmail = "Este é um email automático. Não responda a este email.\n" +
-                    "Clique no link abaixo para confirmar e ativar a sua conta em nosso sistema.";
+                assuntoEmail = "Novo Lar - Ative a sua conta";
+                corpoEmail = "Este é um e-mail automático. Não responda a este email.\n" +
+                    "Clique no link abaixo para ativar sua conta conosco e utilizar nossas vantagens.\n";
             }
             else
             {
-                textoBodyEmail = "Este é um email automático. Não responda a este email.\n" +
-                    "Clique no link abaixo para confirmar o cancelamento de sua inscrição e sua conta em nosso sistema.";
+                assuntoEmail = "Novo Lar - Exclusão sua conta";
             }
 
-            Mensagem mensagem = new Mensagem(destinatario, textoBodyEmail, identityUserId, codigoAtivacao);
-
+            Mensagem mensagem = new Mensagem(destinatario, assuntoEmail, corpoEmail,identityUserId, codigoAtivacao);
+            
             MimeMessage email = ConstroiEmail(mensagem);
 
             Enviar(email);
@@ -42,15 +43,16 @@ namespace UserControlApi.Service
                 try
                 {
                     emailClient.Connect(_configuration.GetValue<string>("EmailSettings:SmtpServer"),
-                        _configuration.GetValue<int>("EmailSettings:Port"), true);
+                        _configuration.GetValue<int>("EmailSettings:Port"), MailKit.Security.SecureSocketOptions.StartTls);
                     emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
                     emailClient.Authenticate(_configuration.GetValue<string>("EmailSettings:From"),
                         _configuration.GetValue<string>("EmailSettings:Password"));
+                    emailClient.SslProtocols = System.Security.Authentication.SslProtocols.Tls;
+                    
                     emailClient.Send(email);
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
 
