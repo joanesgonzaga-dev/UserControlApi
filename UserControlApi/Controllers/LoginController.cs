@@ -5,7 +5,7 @@ using UserControlApi.Service;
 
 namespace UserControlApi.Controllers
 {
-    [Route("api/account/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class LoginController : ControllerBase
     {
@@ -21,6 +21,15 @@ namespace UserControlApi.Controllers
             Result resultado = _loginService.Logar(loginRequest);
             if (resultado.IsFailed) return Unauthorized(resultado.Errors);
             
+            return Ok(resultado.Successes);
+        }
+
+        [HttpPost("/solicitar-reset")]
+        public IActionResult SolicitaResetSenha(UsuarioSolicitaResetarSenhaDTO senhaDTO)
+        {
+            var resultado = _loginService.SolicitarReset(senhaDTO);
+
+            if (resultado.IsFailed) return Unauthorized(resultado.Errors);
             return Ok(resultado.Successes);
         }
     }

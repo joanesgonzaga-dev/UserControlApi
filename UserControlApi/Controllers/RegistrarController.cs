@@ -5,7 +5,7 @@ using UserControlApi.Service;
 
 namespace UserControlApi.Controllers
 {
-    [Route("api/account/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class RegistrarController : ControllerBase
     {
@@ -24,7 +24,7 @@ namespace UserControlApi.Controllers
             return Ok(resultado.Successes);
         }
 
-        [HttpGet("ativar")]
+        [HttpGet("/ativar")]
         public IActionResult AtivarConta([FromQuery] UsuarioAtivacaoDTO usuario)
         {
             Result result = _registrarUsuarioService.Ativar(usuario);

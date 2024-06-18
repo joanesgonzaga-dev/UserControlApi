@@ -72,7 +72,7 @@ namespace UserControlApi.Service
             mensagemDeEmail.From.Add(new MailboxAddress(from, from));
             mensagemDeEmail.To.AddRange(mensagem.Destinatario);
             mensagemDeEmail.Subject = mensagem.Assunto;
-            mensagemDeEmail.Body = new TextPart(MimeKit.Text.TextFormat.Text)
+            mensagemDeEmail.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {
                 Text = mensagem.Conteudo
             };

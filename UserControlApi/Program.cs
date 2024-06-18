@@ -26,6 +26,11 @@ builder.Services.AddScoped<TokenService, TokenService>();
 builder.Services.AddScoped<LogoutService, LogoutService>();
 builder.Services.AddScoped<EnviarEmailService, EnviarEmailService>();
 
+//Código abaixo para uso de UserSecrets
+//builder.WebHost.ConfigureAppConfiguration((context, builder) => builder.AddUserSecrets<Program>());
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

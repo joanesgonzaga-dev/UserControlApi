@@ -4,7 +4,7 @@ using UserControlApi.Service;
 
 namespace UserControlApi.Controllers
 {
-    [Route("api/account/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class LogoutController : ControllerBase
     {
