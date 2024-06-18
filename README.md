@@ -23,7 +23,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 ## Endpoints
 1. **Registro de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/registrar`
+   * URL: `/registrar`
    * Parâmetros (Body):
         * userName (string): Nome de usuário
         * email (string): Email de Usuário
@@ -35,7 +35,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
           
 2. **Ativação de Conta de Usuário**
    * Método HTTP: GET
-   * URL: `api/account/ativar?usuarioId={usuarioId}&codigoDeAtivacao={codigoDeAtivacao}`
+   * URL: `/ativar?usuarioId={usuarioId}&codigoDeAtivacao={codigoDeAtivacao}`
    * Parâmetros (QueryParams):
         * usuarioId (string): Código (Guid) de identificação de usuário no sistema
         * codigoDeAtivacao (string): Tooken recebido pela aplicação para validar ativação de conta de usuário
@@ -45,12 +45,32 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 
 3. **Login de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/login`
+   * URL: `/login`
    * Parâmetros:
-        continua...
+       * userName (string): Código (Guid) de identificação de usuário no sistema
+       * Password (string): Senha de usuário
    * Resposta:
      * 200 OK: Usuário logado com sucesso
-     * 400 Bad Request: Erro de credenciais
+     * 401 Unauthorized: Não foi possível executar o login
+
+4. **Logout de Usuário**
+   * Método HTTP: POST
+   * URL: `/logout`
+   * Parâmetros:
+      * Nenhum
+   * Resposta:
+     * 200 OK
+     * 500 Internal Server Error: Erro ao tentar executar Logout
+
+5. **Solicitar Alteração de Senha**
+   * Método HTTP: POST
+   * URL: `/solicitar-reset`
+   * Parâmetros:
+       * email (string): Email de identificação de usuário no sistema
+   * Resposta:
+     * 200 OK
+     * 401 Unauthorized: Falha ao solicitar alteração de senha
+
 
    [Link para documentação](https://adefinir.com)
    
