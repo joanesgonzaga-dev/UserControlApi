@@ -59,7 +59,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * Parâmetros:
       * Nenhum
    * Resposta:
-     * 200 OK: Usuário logado com sucesso
+     * 200 OK
      * 500 Internal Server Error: Erro ao tentar executar Logout
 
    [Link para documentação](https://adefinir.com)
