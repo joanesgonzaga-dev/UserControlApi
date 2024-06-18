@@ -51,7 +51,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
        * Password (string): Senha de usuário
    * Resposta:
      * 200 OK: Usuário logado com sucesso
-     * 401 Unauthorized: Falha ao executar o login
+     * 401 Unauthorized: Não foi possível executar o login
 
 4. **Logout de Usuário**
    * Método HTTP: POST
