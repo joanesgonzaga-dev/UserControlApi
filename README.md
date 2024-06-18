@@ -57,10 +57,10 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
    * Método HTTP: POST
    * URL: `api/account/logout`
    * Parâmetros:
-        continua...
+      * Nenhum
    * Resposta:
      * 200 OK: Usuário logado com sucesso
-     * 400 Bad Request: Erro de credenciais
+     * 500 Internal Server Error: Erro ao tentar executar Logout
 
    [Link para documentação](https://adefinir.com)
    
