@@ -23,7 +23,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 ## Endpoints
 1. **Registro de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/registrar`
+   * URL: `/registrar`
    * Parâmetros (Body):
         * userName (string): Nome de usuário
         * email (string): Email de Usuário
@@ -35,7 +35,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
           
 2. **Ativação de Conta de Usuário**
    * Método HTTP: GET
-   * URL: `api/account/ativar?usuarioId={usuarioId}&codigoDeAtivacao={codigoDeAtivacao}`
+   * URL: `/ativar?usuarioId={usuarioId}&codigoDeAtivacao={codigoDeAtivacao}`
    * Parâmetros (QueryParams):
         * usuarioId (string): Código (Guid) de identificação de usuário no sistema
         * codigoDeAtivacao (string): Tooken recebido pela aplicação para validar ativação de conta de usuário
@@ -45,7 +45,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 
 3. **Login de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/login`
+   * URL: `/login`
    * Parâmetros:
        * userName (string): Código (Guid) de identificação de usuário no sistema
        * Password (string): Senha de usuário
@@ -55,7 +55,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 
 4. **Logout de Usuário**
    * Método HTTP: POST
-   * URL: `api/account/logout`
+   * URL: `/logout`
    * Parâmetros:
       * Nenhum
    * Resposta:
@@ -64,7 +64,7 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
 
 5. **Solicitar Alteração de Senha**
    * Método HTTP: POST
-   * URL: `api/account/login/solicitar-reset`
+   * URL: `/solicitar-reset`
    * Parâmetros:
        * email (string): Email de identificação de usuário no sistema
    * Resposta:
