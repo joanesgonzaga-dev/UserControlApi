@@ -62,6 +62,16 @@ Fornecer segurança de acesso à aplicação de gestão de contratos imobiliári
      * 200 OK
      * 500 Internal Server Error: Erro ao tentar executar Logout
 
+5. **Solicitar Alteração de Senha**
+   * Método HTTP: POST
+   * URL: `api/account/login/solicitar-reset`
+   * Parâmetros:
+       * email (string): Email de identificação de usuário no sistema
+   * Resposta:
+     * 200 OK
+     * 401 Unauthorized: Falha ao solicitar alteração de senha
+
+
    [Link para documentação](https://adefinir.com)
    
 ## Considerações Finais
